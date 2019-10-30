@@ -110,7 +110,7 @@ router.delete("/:id", (req, res) => {
 		.remove(id)
 		.then(deleted => {
 			if (deleted) {
-				res.status(200).end();
+				res.status(200).json({ message: "User was deleted." });
 			} else {
 				res
 					.status(404)
