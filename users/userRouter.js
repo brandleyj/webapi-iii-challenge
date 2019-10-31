@@ -5,7 +5,7 @@ const postDb = require("../posts/postDb.js");
 const router = express.Router();
 
 router.post("/", validateUser, (req, res) => {
-	const name = req.body;
+	const name = req.body.name;
 	if (!name) {
 		res.status(400).json({
 			errorMessage: "Please provide a name for the user."
